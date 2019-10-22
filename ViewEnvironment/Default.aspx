@@ -13,7 +13,7 @@
 <body>
     <form id="form1" runat="server">
 
-   
+
     <nav class="top-bar" >
         <ul class="title-area">
             <li class="name">
@@ -46,6 +46,8 @@
                         <asp:Label ID="lblInstanceStart" runat="server"></asp:Label></em></p>
                     <p>The bound services are <em>
                         <asp:Label ID="lblBoundServices" runat="server"></asp:Label></em></p>
+                    <p>The headers are:<br> <em>
+                        <asp:Label ID="litrlHeaderDump" runat="server"></asp:Label></em></p>
                 </div>
                 <hr/>
             </div>
@@ -59,14 +61,11 @@
                 <asp:Button ID="btnKill" runat="server" Text="Kill" CssClass="medium alert button" OnClick="btnKill_Click"/>
             </div>
         </div>
-
         <script src="js/jquery.js"></script>
         <script src="js/foundation.min.js"></script>
         <script>
             $(document).foundation();
         </script>
-
-
     </div>
     </form>
 </body>

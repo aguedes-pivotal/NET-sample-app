@@ -11,6 +11,7 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+    		Response.Cache.SetCacheability(HttpCacheability.NoCache);
         // Get environment variables and dump them
         IDictionary vars = System.Environment.GetEnvironmentVariables();
         System.Environment.GetEnvironmentVariables();
@@ -20,6 +21,10 @@ public partial class _Default : System.Web.UI.Page
             if (Request.QueryString["all"]!=null)
                 Response.Write(entry.Key + " = " + entry.Value + "<br>");
         }
+				foreach (string strKey in Request.Headers.AllKeys)
+				{
+					litrlHeaderDump.Text += strKey + " = " + Request.Headers[strKey] + "<br />\n";
+				}
 
         lblTime.Text = DateTime.Now.ToString();
         lblDotNetVersion.Text = Environment.Version.ToString();
